@@ -496,7 +496,7 @@
           </div>
 
           <div class="col-lg-7 mt-5 mt-lg-0 d-flex align-items-stretch">
-            <form action="forms/contact.php" method="post" role="form" class="php-email-form">
+            <form method="post" role="form" class="php-email-form">
               <div class="row">
                 <div class="form-group col-md-6">
                   <label for="name">Your Name</label>
@@ -513,14 +513,14 @@
               </div>
               <div class="form-group">
                 <label for="name">Message</label>
-                <textarea class="form-control" name="message" rows="10" required></textarea>
+                <textarea class="form-control" name="message" id="message" rows="10" required></textarea>
               </div>
               <div class="my-3">
                 <div class="loading">Loading</div>
                 <div class="error-message"></div>
                 <div class="sent-message">Your message has been sent. Thank you!</div>
               </div>
-              <div class="text-center"><button type="submit">Send Message</button></div>
+              <div class="text-center"><button type="button" onclick="sendwhatsapp();">Send Message</button></div>
             </form>
           </div>
 
@@ -546,6 +546,27 @@
 
 
   <script src="assets/js/main.js"></script>
+  <script>
+ function sendwhatsapp() {
+    var phonenumber = "9061991860";
+
+    var first_name = document.getElementById("name").value;
+    var email = document.getElementById("email").value;
+    var subject = document.getElementById("subject").value;
+    var message = document.getElementById("message").value; // Corrected ID here
+
+    var url = "https://wa.me/" + phonenumber + "?text="
+        + "First Name : " + first_name + "%0a"
+        + "Email : " + email + "%0a"
+        + "Subject : " + subject + "%0a" // Corrected variable name here
+        + "Message : " + message + "%0a%0a"
+        + "Thank you for connecting with me";
+
+    window.open(url, '_blank').focus();
+}
+
+
+</script>
 
 </body>
 

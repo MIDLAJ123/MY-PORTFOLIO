@@ -481,13 +481,13 @@ select:disabled {
 button,
 [type=button],
 [type=reset],
-[type=submit] {
+[type=button] {
   -webkit-appearance: button;
 }
 button:not(:disabled),
 [type=button]:not(:disabled),
 [type=reset]:not(:disabled),
-[type=submit]:not(:disabled) {
+[type=button]:not(:disabled) {
   cursor: pointer;
 }
 
